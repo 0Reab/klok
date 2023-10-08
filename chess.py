@@ -19,7 +19,7 @@ class Game:
         pause = False
         while running:
             for event in pygame.event.get():
-                if event.type == KEYDOWN:
+                if event.type == MOUSEBUTTONDOWN:
                     if event.key == K_ESCAPE:
                         running = False
 
@@ -32,6 +32,16 @@ class Game:
 
                 elif event.type == QUIT:
                     running = False
+
+class Pawn:
+    def __init__(self, parent_screen, length):
+        self.length = length
+        self.parent_screen = parent_screen
+        self.block = pygame.image.load("resources/pawn.jpg").convert()
+
+        #self.x = [40]*length
+        #self.y = [40]*length
+        #self.direction = 'down'
 
 if __name__ == "__main__":
     game = Game()
