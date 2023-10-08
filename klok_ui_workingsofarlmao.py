@@ -72,55 +72,6 @@ frame2.pack(pady=0,
            fill='both',
            expand=True)
 
-progressbar = customtkinter.CTkProgressBar(master=frame2,
-                                           orientation="vertical",
-                                           mode="determinate",
-                                           width=100,
-                                           height=70,
-                                           corner_radius=2,
-                                           progress_color="green")
-progressbar.pack()
-progressbar.place(x=80, y=40)
-progressbar2 = customtkinter.CTkProgressBar(master=frame2,
-                                           orientation="vertical",
-                                           mode="determinate",
-                                           width=100,
-                                           height=70,
-                                           corner_radius=2,
-                                           progress_color="green")
-progressbar2.pack()
-progressbar2.place(x=200, y=40)
-
-progressbar3 = customtkinter.CTkProgressBar(master=frame2,
-                                           orientation="vertical",
-                                           mode="determinate",
-                                           width=100,
-                                           height=70,
-                                           corner_radius=2,
-                                           progress_color="green")
-progressbar3.pack()
-progressbar3.place(x=320, y=40)
-
-progressbar4 = customtkinter.CTkProgressBar(master=frame2,
-                                           orientation="vertical",
-                                           mode="determinate",
-                                           width=100,
-                                           height=70,
-                                           corner_radius=2,
-                                           progress_color="green")
-progressbar4.pack()
-progressbar4.place(x=440, y=40)
-
-progressbar5 = customtkinter.CTkProgressBar(master=frame2,
-                                           orientation="vertical",
-                                           mode="determinate",
-                                           width=100,
-                                           height=70,
-                                           corner_radius=2,
-                                           progress_color="green")
-progressbar3.pack()
-progressbar3.place(x=320, y=40)
-
 def progressbar(x_value, y_value):
     progressbar = customtkinter.CTkProgressBar(master=frame2,
                                                orientation="vertical",
@@ -132,7 +83,27 @@ def progressbar(x_value, y_value):
     progressbar.pack()
     progressbar.place(x=x_value, y=y_value)
 
-progressbar()
 
+count = 0
+for i in range(1,8):
+    y = 80
+    z = 90
+    progressbar((y+40)*i,40)
+    progressbar((y + 40) * i, 130)
+    progressbar((y + 40) * i, 220)
+    progressbar((y + 40) * i, 310)
+    progressbar((y + 40) * i, 400)
+
+#progressbar(80,40)
+#progressbar(200,40)
+#progressbar(320,40)
+#progressbar(440,40)
+#progressbar(560,40)
+#progressbar(680,40)
+#progressbar(800,40)
+
+#progressbar(320,40)
+
+#progressbar(320,40)
 
 root.mainloop()
