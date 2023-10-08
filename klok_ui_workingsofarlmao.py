@@ -34,8 +34,8 @@ def trest():
 output_string = customtkinter.StringVar()
 #--------------------------------------------------------------------------------------------------------------
 frame = customtkinter.CTkFrame(master=root)
-frame.pack(pady=20,
-           padx=60,
+frame.pack(pady=10,
+           padx=20,
            fill='both',
            expand=True)
 #--------------------------------------------------------------------------------------------------------------
@@ -65,15 +65,74 @@ button_stop.pack(padx=10, pady=12)
 checkbox = customtkinter.CTkCheckBox(master=frame, text="Remember")
 checkbox.pack(padx=10, pady=12)
 #--------------------------------------------------------------------------------------------------------------
-progressbar = customtkinter.CTkProgressBar(master=frame,
+
+frame2 = customtkinter.CTkFrame(master=frame)
+frame2.pack(pady=0,
+           padx=70,
+           fill='both',
+           expand=True)
+
+progressbar = customtkinter.CTkProgressBar(master=frame2,
                                            orientation="vertical",
                                            mode="determinate",
-                                           width=20,
+                                           width=100,
                                            height=70,
-                                           corner_radius=5,
+                                           corner_radius=2,
                                            progress_color="green")
-progressbar.pack(padx=10,pady=12,)
+progressbar.pack()
+progressbar.place(x=80, y=40)
+progressbar2 = customtkinter.CTkProgressBar(master=frame2,
+                                           orientation="vertical",
+                                           mode="determinate",
+                                           width=100,
+                                           height=70,
+                                           corner_radius=2,
+                                           progress_color="green")
+progressbar2.pack()
+progressbar2.place(x=200, y=40)
 
+progressbar3 = customtkinter.CTkProgressBar(master=frame2,
+                                           orientation="vertical",
+                                           mode="determinate",
+                                           width=100,
+                                           height=70,
+                                           corner_radius=2,
+                                           progress_color="green")
+progressbar3.pack()
+progressbar3.place(x=320, y=40)
+
+progressbar4 = customtkinter.CTkProgressBar(master=frame2,
+                                           orientation="vertical",
+                                           mode="determinate",
+                                           width=100,
+                                           height=70,
+                                           corner_radius=2,
+                                           progress_color="green")
+progressbar4.pack()
+progressbar4.place(x=440, y=40)
+
+progressbar5 = customtkinter.CTkProgressBar(master=frame2,
+                                           orientation="vertical",
+                                           mode="determinate",
+                                           width=100,
+                                           height=70,
+                                           corner_radius=2,
+                                           progress_color="green")
+progressbar3.pack()
+progressbar3.place(x=320, y=40)
+
+def progressbar(x_value, y_value):
+    progressbar = customtkinter.CTkProgressBar(master=frame2,
+                                               orientation="vertical",
+                                               mode="determinate",
+                                               width=100,
+                                               height=70,
+                                               corner_radius=2,
+                                               progress_color="green")
+    progressbar.pack()
+    progressbar.place(x=x_value, y=y_value)
+
+progressbar()
 
 
 root.mainloop()
