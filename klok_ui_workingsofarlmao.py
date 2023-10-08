@@ -1,11 +1,13 @@
 import customtkinter
 import datetime
+import pywinstyles
 
 customtkinter.set_appearance_mode('dark')
 customtkinter.set_default_color_theme('dark-blue')
 
 root = customtkinter.CTk()
 root.geometry("1200x800")
+#pywinstyles.apply_style(root, "acrylic")
 
 current_time = datetime.datetime.now()
 time_start = list()
@@ -63,4 +65,15 @@ button_stop.pack(padx=10, pady=12)
 checkbox = customtkinter.CTkCheckBox(master=frame, text="Remember")
 checkbox.pack(padx=10, pady=12)
 #--------------------------------------------------------------------------------------------------------------
+progressbar = customtkinter.CTkProgressBar(master=frame,
+                                           orientation="vertical",
+                                           mode="determinate",
+                                           width=20,
+                                           height=70,
+                                           corner_radius=5,
+                                           progress_color="green")
+progressbar.pack(padx=10,pady=12,)
+
+
+
 root.mainloop()
