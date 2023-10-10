@@ -1,4 +1,7 @@
 def add_time(x, y, **kwargs):
+    x = x.split()
+    print(x,y)
+    day = kwargs
 
 
 
