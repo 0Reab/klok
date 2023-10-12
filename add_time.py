@@ -1,6 +1,7 @@
 import re
 def add_time(x, y, **kwargs):
     day = kwargs
+    day_count = 0
     temp_list1 = re.split(':| ', x)
     temp_list2 = re.split(':| ', y)
 
@@ -23,10 +24,14 @@ def add_time(x, y, **kwargs):
 
     while add_hr > 12:
         add_hr = add_hr - 12
+        day_count = float(day_count) + 0.5
+
         if AM == True:
             AM = False
+
         else:
-            AM == True
+            AM = True
+
 
 
     if add_min == 60:
@@ -47,4 +52,4 @@ def add_time(x, y, **kwargs):
 
 
 
-print(add_time("11:00 AM", "24:00"))
+print(add_time("11:00 AM", "36:00"))
