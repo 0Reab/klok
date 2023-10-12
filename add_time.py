@@ -48,7 +48,15 @@ def add_time(x, y, **kwargs):
     else:
         time_of_day = "PM"
 
-    print(f'{add_hr}:{add_min} {time_of_day}')
+
+    if day_count == 1:
+        print(f'{add_hr}:{add_min} {time_of_day} (next day)')
+
+    elif day_count > 1:
+        print(f'{add_hr}:{add_min} {time_of_day}, ({day_count} days later)')
+
+    else:
+        print(f'{add_hr}:{add_min} {time_of_day}')
 
 
 
