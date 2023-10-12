@@ -33,8 +33,6 @@ def add_time(x, y, day=""):
         else:
             AM = True
 
-
-
     if add_min == 60:
         add_hr = add_hr + 1
         add_min = 00
@@ -50,24 +48,21 @@ def add_time(x, y, day=""):
         time_of_day = "PM"
 
 
-    if day_count == 1:
-        print(f'{add_hr}:{add_min} {time_of_day} (next day)')
-
-    elif day_count > 1:
-        print(f'{add_hr}:{add_min} {time_of_day}, ({day_count} days later)')
-
-
     if day is not None:
         for i in week:
             if i == day:
-               if day_count < 1:
-                   print(f'{add_hr}:{add_min} {time_of_day}, {i}')
-               elif day_count > 1:
-                   print(f'{add_hr}:{add_min} {time_of_day}, {i} ({day_count} days later)')
+                if day_count == 1:
+                    print(f'{add_hr}:{add_min} {time_of_day}, {i} (next day)')
+                elif day_count < 1:
+                    print(f'{add_hr}:{add_min} {time_of_day}, {i}')
+                elif day_count > 1:
+                    print(f'{add_hr}:{add_min} {time_of_day}, {i} ({day_count} days later)')
 
     elif day is None:
         for i in week:
-            if day_count < 1:
+            if day_count == 1:
+                print(f'{add_hr}:{add_min} {time_of_day} (next day)')
+            elif day_count < 1:
                 print(f'{add_hr}:{add_min} {time_of_day}')
             elif day_count > 1:
                 print(f'{add_hr}:{add_min} {time_of_day} ({day_count} days later)')
