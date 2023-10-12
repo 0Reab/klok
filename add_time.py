@@ -21,9 +21,16 @@ def add_time(x, y, **kwargs):
         else:
             am_pm = "AM"
 
+    if add_min == 60:
+        add_hr = add_hr + 1
+        add_min = 00
+
+    while add_min > 60:
+        add_hr = add_hr + 1
+        add_min = add_min - 60
 
     print(f'{add_hr}:{add_min} {am_pm}')
 
 
 
-print(add_time("11:43 AM", "2:20"))
+print(add_time("11:00 AM", "24:00"))
