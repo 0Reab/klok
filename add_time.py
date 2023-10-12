@@ -6,7 +6,14 @@ def add_time(x, y, **kwargs):
 
     hr1 = temp_list1[0]
     min1 = temp_list1[1]
-    am_pm = temp_list1[2]
+
+    if temp_list1[2] == "AM":
+        AM = True
+        PM = False
+    else:
+        temp_list1[2] != "AM"
+        AM = False
+        PM = True
 
     hr2 = temp_list2[0]
     min2 = temp_list2[1]
@@ -14,12 +21,13 @@ def add_time(x, y, **kwargs):
     add_hr = int(hr1) + int(hr2)
     add_min = int(min1) + int(min2)
 
-    if add_hr > 12:
+    while add_hr > 12:
         add_hr = add_hr - 12
-        if am_pm == "AM":
-            am_pm = "PM"
+        if AM == True:
+            AM = False
         else:
-            am_pm = "AM"
+            AM == True
+
 
     if add_min == 60:
         add_hr = add_hr + 1
@@ -29,7 +37,13 @@ def add_time(x, y, **kwargs):
         add_hr = add_hr + 1
         add_min = add_min - 60
 
-    print(f'{add_hr}:{add_min} {am_pm}')
+
+    if AM == True:
+        time_of_day = "AM"
+    else:
+        time_of_day = "PM"
+
+    print(f'{add_hr}:{add_min} {time_of_day}')
 
 
 
