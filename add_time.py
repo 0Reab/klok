@@ -1,24 +1,29 @@
+import re
 def add_time(x, y, **kwargs):
-    x = x.split()
     day = kwargs
-    time_1 = x[0]
-    (time_1_hour,
-     time_2_hour,
-     time_1_minute,
-     time_2_minute) = time_1[:1:], y[:1:], time_1[2::], y[2::]
+    temp_list1 = re.split(':| ', x)
+    temp_list2 = re.split(':| ', y)
 
-    add_hour = int(time_1_hour) + int(time_2_hour)
-    add_minute = int(time_1_minute) + int(time_2_minute)
-    if add_hour > 12:
-        add_hour = 12 - add_hour
-    if add_minute == 60:
-        add_hour + 1
-        add_minute = 0
-    elif add_minute > 60:
-        add_minute = 60 - add_minute
+    hr1 = temp_list1[0]
+    min1 = temp_list1[1]
+    am_pm = temp_list1[2]
 
-    print(f'{add_hour}:{add_minute} {x[1]}')
+    hr2 = temp_list2[0]
+    min2 = temp_list2[1]
+
+    add_hr = int(hr1) + int(hr2)
+    add_min = int(min1) + int(min2)
+
+    if add_hr > 12:
+        add_hr = add_hr - 12
+        if am_pm == "AM":
+            am_pm = "PM"
+        else:
+            am_pm = "AM"
+
+
+    print(f'{add_hr}:{add_min} {am_pm}')
 
 
 
-print(add_time("3:00 PM", "3:10"))
+print(add_time("11:43 AM", "2:20"))
