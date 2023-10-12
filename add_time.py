@@ -1,6 +1,7 @@
 import re
-def add_time(x, y, **kwargs):
-    day = kwargs
+def add_time(x, y, day=""):
+    week = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+
     day_count = 0
     temp_list1 = re.split(':| ', x)
     temp_list2 = re.split(':| ', y)
@@ -55,9 +56,18 @@ def add_time(x, y, **kwargs):
     elif day_count > 1:
         print(f'{add_hr}:{add_min} {time_of_day}, ({day_count} days later)')
 
-    else:
-        print(f'{add_hr}:{add_min} {time_of_day}')
+    #else:
+    #    print(f'{add_hr}:{add_min} {time_of_day}')
+
+    if day is not None:
+        for i in week:
+            if i == day:
+                if day_count < 1:
+                    print(f'{add_hr}:{add_min} {time_of_day}, {i}')
 
 
 
-print(add_time("01:00 PM", "12:00"))
+
+
+
+print(add_time("01:00 PM", "12:00", "Monday"))
