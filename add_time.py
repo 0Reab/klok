@@ -52,4 +52,4 @@ def add_time(x, y, **kwargs):
 
 
 
-print(add_time("11:00 AM", "36:00"))
+print(add_time("01:00 PM", "12:00"))
