@@ -14,15 +14,15 @@ def arithmetic_arranger(x,bool):
             print("Error: Too many problems.")
 
         for i in lst:
-            val1 = i[0]
-            val2 = i[2]
+            val1 = int(i[0])
+            val2 = int(i[2])
             oper = i[1]
 
-            if isinstance(val1, int) or isinstance(val2, int) != True:
-                print("Error: Numbers must only contain digits.")
-
-            if oper != "+" or "-":
+            if oper == "+" or "-":
                 print("Error: Operator must be '+' or '-'.")
+
+            if isinstance(val1, int) or isinstance(val2, int) == True:
+                print("Error: Numbers must only contain digits.")
 
             else:
                 operat = {'+': lambda x, y: x + y,
