@@ -18,9 +18,16 @@ def arithmetic_arranger(x,bool):
             val2 = i[2]
             oper = i[1]
 
-            operat = {'+': lambda x, y: x + y,
-                  '-': lambda x, y: x - y}
-            result.append(operat[i[1]](int(i[0]), int(i[2])))
+            if isinstance(val1, int) or isinstance(val2, int) != True:
+                print("Error: Numbers must only contain digits.")
+
+            if oper != "+" or "-":
+                print("Error: Operator must be '+' or '-'.")
+
+            else:
+                operat = {'+': lambda x, y: x + y,
+                      '-': lambda x, y: x - y}
+                result.append(operat[i[1]](int(i[0]), int(i[2])))
 
         if bool == True:
             print(f'')
