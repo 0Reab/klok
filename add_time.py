@@ -1,6 +1,8 @@
 import re
+
+
 def add_time(x, y, day=""):
-    week = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
     day_count = 0
     temp_list1 = re.split(':| ', x)
@@ -41,12 +43,10 @@ def add_time(x, y, day=""):
         add_hr = add_hr + 1
         add_min = add_min - 60
 
-
     if AM == True:
         time_of_day = "AM"
     else:
         time_of_day = "PM"
-
 
     if day != "":
         for i in week:
@@ -59,8 +59,8 @@ def add_time(x, y, day=""):
                     day_count > 1
                     print(f'{add_hr}:{add_min} {time_of_day}, {i} ({day_count} days later)')
 
-# if statmenti i loop ne rade kako treba
-# am_pm ne radi u ovom slucaju inputa "11:43 AM", "00:20"
+    # if statmenti i loop ne rade kako treba
+    # am_pm ne radi u ovom slucaju inputa "11:43 AM", "00:20"
 
     if day == "":
         for i in week:
@@ -74,7 +74,9 @@ def add_time(x, y, day=""):
 
     # else:
     #     print(f'{add_hr}:{add_min} {time_of_day}')
-#TEST CASES
+
+
+# TEST CASES
 
 # add_time("3:00 PM", "3:10")
 # # Returns: 6:10 PM
