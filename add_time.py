@@ -13,11 +13,11 @@ def add_time(x, y, day=""):
     min1 = temp_list1[1]
 
     if temp_list1[2] == "AM":
-        original = 'am'
+        original = 'AM'
         AM = True
         PM = False
     else:
-        original = 'pm'
+        original = 'PM'
         AM = False
         PM = True
 
@@ -58,11 +58,15 @@ def add_time(x, y, day=""):
     time = f'{add_hr}:{add_min} {time_of_day}'
 
     if day == "":
+        ic(day_count)
         if day_count == 1:
             print(f'{time} (next day)')
 
         if day_count < 1:
-            print(f'{time} (next day)')
+            if original != time_of_day:
+                print(f'{time} (next day)')
+            else:
+                print(f'{time}')
 
         if day_count > 1:
             print(f'{time} ({math.ceil(day_count)} days later)')
@@ -98,4 +102,4 @@ def add_time(x, y, day=""):
 # # Returns: 12:03 AM, Thursday (2 days later)
 # add_time("6:30 PM", "205:12")
 # # Returns: 7:42 AM (9 days later)
-print(add_time("10:10 PM", "1:30"))
+print(add_time("11:43 AM", "00:20"))
