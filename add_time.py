@@ -1,5 +1,5 @@
 import re
-
+from icecream import ic
 
 def add_time(x, y, day=""):
     week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -15,7 +15,6 @@ def add_time(x, y, day=""):
         AM = True
         PM = False
     else:
-        temp_list1[2] != "AM"
         AM = False
         PM = True
 
@@ -48,32 +47,29 @@ def add_time(x, y, day=""):
     else:
         time_of_day = "PM"
 
-    if day != "":
-        for i in week:
-            if i in week == day:
-                if day_count == 1:
-                    print(f'{add_hr}:{add_min} {time_of_day}, {i} (next day)')
-                if day_count < 1:
-                    print(f'{add_hr}:{add_min} {time_of_day}, {i}')
-                else:
-                    day_count > 1
-                    print(f'{add_hr}:{add_min} {time_of_day}, {i} ({day_count} days later)')
+    base = f'{add_hr}:{add_min} {time_of_day}
+
+    if day == "":
+        if day_count == 1:
+            print(base)
+        else:
+            print(base)
+
 
     # if statmenti i loop ne rade kako treba
     # am_pm ne radi u ovom slucaju inputa "11:43 AM", "00:20"
 
-    if day == "":
-        for i in week:
+    else:
+        for day in week:
             if day_count == 1:
-                print(f'{add_hr}:{add_min} {time_of_day} (next day)')
-            if day_count < 1:
-                print(f'{add_hr}:{add_min} {time_of_day}')
+                print(f'{base}, {day} (next day)')
+                break
+            if day_count > 1:
+                print(f'{base}, {day}')
+                break
             else:
-                day_count > 1
-                print(f'{add_hr}:{add_min} {time_of_day} ({day_count} days later)')
-
-    # else:
-    #     print(f'{add_hr}:{add_min} {time_of_day}')
+                print(f'{base}, {day} ({day_count} days later)')
+                break
 
 
 # TEST CASES
@@ -90,4 +86,4 @@ def add_time(x, y, day=""):
 # # Returns: 12:03 AM, Thursday (2 days later)
 # add_time("6:30 PM", "205:12")
 # # Returns: 7:42 AM (9 days later)
-print(add_time("6:30 PM", "205:12"))
+print(add_time("10:10 PM", "3:30"))
