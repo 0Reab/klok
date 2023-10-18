@@ -6,6 +6,9 @@ def arithmetic_arranger(x, bool):
     else:
         lst = []
         result = []
+        num1 = []
+        num2 = []
+        oper = []
 
         for i in x:
             lst.append(i.split())
@@ -18,6 +21,11 @@ def arithmetic_arranger(x, bool):
             try:
                 val1 = int(i[0])
                 val2 = int(i[2])
+                opera = i[1]
+
+                num1.append(val1)
+                num2.append(val2)
+                oper.append(opera)
             except:
                 print("Error: Numbers must only contain digits.")
                 break
@@ -30,11 +38,10 @@ def arithmetic_arranger(x, bool):
             except:
                 print("Error: Operator must be '+' or '-'.")
                 break
-        print(result[0])
 
 
-        # if bool == True:
-        #     for i in result:
-        #         print(f'{i}')
+        if bool == True:
+            for i in result:
+                print(f'{i}')
 
 print(arithmetic_arranger(["1 + 8", "1 + 3801", "9999 + 9999", "523 - 49"], True))
