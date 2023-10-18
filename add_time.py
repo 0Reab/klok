@@ -47,7 +47,7 @@ def add_time(x, y, day=""):
     else:
         time_of_day = "PM"
 
-    base = f'{add_hr}:{add_min} {time_of_day}
+    base = f'{add_hr}:{add_min} {time_of_day}'
 
     if day == "":
         if day_count == 1:
