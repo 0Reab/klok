@@ -19,15 +19,11 @@ def arithmetic_arranger(x, bool):
 
             try:
                 val1 = int(i[0])
-            except:
-                print("Error: Numbers must only contain digits.")
-                break
-
-            try:
                 val2 = int(i[2])
             except:
                 print("Error: Numbers must only contain digits.")
                 break
+
 
             oper = i[1]
 
