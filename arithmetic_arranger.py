@@ -4,8 +4,8 @@ def arithmetic_arranger(x, bool):
         print("Error: Too many problems.")
 
     else:
-        lst = list()
-        result = list()
+        lst = []
+        result = []
 
         for i in x:
             lst.append(i.split())
@@ -13,19 +13,14 @@ def arithmetic_arranger(x, bool):
 
         if len(x) > 5:
             print("Error: Too many problems.")
-        #for loop x2, i pretvaram z na indeksu 0 i 2 u ints ako to ne mogu return error
 
         for i in lst:
-
             try:
                 val1 = int(i[0])
                 val2 = int(i[2])
             except:
                 print("Error: Numbers must only contain digits.")
                 break
-
-
-            oper = i[1]
 
             try:
                 operat = {'+': lambda x, y: x + y,
@@ -35,9 +30,11 @@ def arithmetic_arranger(x, bool):
             except:
                 print("Error: Operator must be '+' or '-'.")
                 break
+        print(result[0])
 
 
-        if bool == True:
-            print(f'')
+        # if bool == True:
+        #     for i in result:
+        #         print(f'{i}')
 
 print(arithmetic_arranger(["1 + 8", "1 + 3801", "9999 + 9999", "523 - 49"], True))
