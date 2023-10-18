@@ -47,13 +47,13 @@ def add_time(x, y, day=""):
     else:
         time_of_day = "PM"
 
-    base = f'{add_hr}:{add_min} {time_of_day}'
+    time = f'{add_hr}:{add_min} {time_of_day}'
 
     if day == "":
         if day_count == 1:
-            print(base)
+            print(time)
         else:
-            print(base)
+            print(time)
 
 
     # if statmenti i loop ne rade kako treba
@@ -62,13 +62,13 @@ def add_time(x, y, day=""):
     else:
         for day in week:
             if day_count == 1:
-                print(f'{base}, {day} (next day)')
+                print(f'{time}, {day} (next day)')
                 break
             if day_count > 1:
-                print(f'{base}, {day}')
+                print(f'{time}, {day}')
                 break
             else:
-                print(f'{base}, {day} ({day_count} days later)')
+                print(f'{time}, {day} ({day_count} days later)')
                 break
 
 
