@@ -1,3 +1,4 @@
+import math
 import re
 from icecream import ic
 
@@ -12,9 +13,11 @@ def add_time(x, y, day=""):
     min1 = temp_list1[1]
 
     if temp_list1[2] == "AM":
+        original = 'am'
         AM = True
         PM = False
     else:
+        original = 'pm'
         AM = False
         PM = True
 
@@ -30,7 +33,6 @@ def add_time(x, y, day=""):
 
         if AM == True:
             AM = False
-
         else:
             AM = True
 
@@ -42,18 +44,28 @@ def add_time(x, y, day=""):
         add_hr = add_hr + 1
         add_min = add_min - 60
 
-    if AM == True:
-        time_of_day = "AM"
+    if day_count < 1:
+        if AM == True:
+            time_of_day = "AM"
+        else:
+            time_of_day = "PM"
     else:
-        time_of_day = "PM"
+        if AM == True:
+            time_of_day = "AM"
+        else:
+            time_of_day = "PM"
 
     time = f'{add_hr}:{add_min} {time_of_day}'
 
     if day == "":
         if day_count == 1:
-            print(time)
-        else:
-            print(time)
+            print(f'{time} (next day)')
+
+        if day_count < 1:
+            print(f'{time} (next day)')
+
+        if day_count > 1:
+            print(f'{time} ({math.ceil(day_count)} days later)')
 
 
     # if statmenti i loop ne rade kako treba
@@ -86,4 +98,4 @@ def add_time(x, y, day=""):
 # # Returns: 12:03 AM, Thursday (2 days later)
 # add_time("6:30 PM", "205:12")
 # # Returns: 7:42 AM (9 days later)
-print(add_time("10:10 PM", "3:30"))
+print(add_time("10:10 PM", "1:30"))
